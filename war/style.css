@@ -1,0 +1,130 @@
+body{
+    font-family:'Arial' !important;
+    font-size:0.9em;
+    color:#444;
+    text-align:center;
+    background: url('img/Patterns3-6.png') repeat;
+}
+
+#page{
+    margin:0 auto;
+    padding:0;
+    display:inline-block;
+    width:850px;
+}
+
+
+#YTplayer-template{
+    display:none;
+}
+
+#ololo{
+    width: 847px;
+    font-size:2em;
+    padding:0;
+    margin:0;
+}
+
+#theB{
+    width:850px;
+    font-size:3em;
+    padding:0;
+    margin:0;
+    color:black;
+}
+
+.watermark{
+    font-weight:bold;
+    color: #808080;
+    font-style:italic;
+}
+
+ul#track_list{
+    padding:0;
+    margin:10px 0 0 0;
+}
+
+li.active{
+    font-size:1.1em;
+    cursor:default !important;
+    padding:8px !important;
+}
+
+li.active span.track-title{
+    text-shadow: 0 0 8px #000;color: #fff;
+}
+
+ul#track_list li{
+    list-style:none;
+    margin-bottom:15px;
+    border: solid 1px #555;
+    text-align:left;
+    padding:4px;
+    cursor:pointer;
+}
+
+li .track-title{
+    font-weight:bolder;
+    color:black;
+}
+
+li .track-duration{
+    color:grey;
+    margin-left:1em;
+}
+
+li .track-url{
+    color:black;
+    display:none;
+}
+
+li a.rem-track{
+    text-decoration:none;
+    border-bottom:dotted 1px;
+    color:red;
+    float:right;
+}
+
+li .iframe
+{
+    display:none;
+}
+
+#YTplayer-template
+{
+    display:none;
+}
+
+.YTplayer
+{
+    color:red;
+}
+
+#loader
+{
+    padding-top:5px;
+    display:block;
+    position:relative;
+}
+
+#l_spiral
+{
+    position:absolute;
+    left:245px;
+    top:205px;
+    
+}
+
+#r_spiral
+{
+    position:absolute;
+    left:430px;
+    top:205px;
+}
+
+#loader_spin
+{
+    position:absolute;
+    left:370px;
+    top:400px;
+}
