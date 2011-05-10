@@ -11,13 +11,13 @@ import com.google.gdata.util.ServiceException;
 
 
 public class Core {
-	ArrayList<ListItem> inputList;
+	//ArrayList<ListItem> inputList;
 	ArrayList<SongRespond> outSongJSON;
 	ArrayList<TitleRequest> inTitleJSON;
 	MultipleSongRespond songArr;
 	
 	Core(){
-		inputList = new ArrayList<ListItem>();
+		//inputList = new ArrayList<ListItem>();
 		outSongJSON = new ArrayList<SongRespond>();
 		inTitleJSON = new ArrayList<TitleRequest>();
 	}
@@ -26,11 +26,11 @@ public class Core {
 		this();
 		SetRequestList(loader.GetList());
 	}
-
+/*
 	public void SetInputList(ArrayList<ListItem> aList){
 		this.inputList = aList;
 	}
-	
+	*/
 	public void Operation() throws IOException, ServiceException{
 		SongRespond song;
 		YTServiceSingletone service =  YTServiceSingletone.getInstance();
@@ -49,10 +49,11 @@ public class Core {
 		}
 	}
 	
-	public void AddListItem(ListItem aitem){
+	/*
+	 * public void AddListItem(ListItem aitem){
 		this.inputList.add(aitem);
 	}
-	
+	*/
 	public ArrayList<SongRespond> GetSongList(){
 		return outSongJSON;
 	}
@@ -69,7 +70,6 @@ public class Core {
 			tracks[i++] = item;
 			
 		}
-		
 		
 		smp.setTracks(tracks);
 		

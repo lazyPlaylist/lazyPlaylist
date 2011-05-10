@@ -16,7 +16,6 @@ import com.google.gdata.util.AuthenticationException;
 import com.google.gdata.util.ServiceException;
 import com.google.gdata.data.youtube.YouTubeMediaContent;
 import com.google.gdata.data.media.MediaFeed;
-import com.google.gdata.client.media.MediaService;
 import com.google.gdata.client.media.*;
 
 
@@ -42,7 +41,8 @@ public class YTServiceSingletone {
 	
 	private void InitService() throws AuthenticationException{
 		service = new YouTubeService("Demo",dev_key);
-		service.setUserCredentials("list.to.playlist@gmail.com", "prettyeasyone");
+		//service.setUserCredentials("list.to.playlist@gmail.com", "prettyeasyone");
+		//there is no need to login into youtube. simple querying is available for everyone
 	}
 	
 	private String GetVideoID(VideoEntry videoEntry){
@@ -86,19 +86,29 @@ public class YTServiceSingletone {
 	}
 	
 	private String GetMediaDuration(YouTubeMediaGroup mediaGroup){
-	    int summ, count;
+		int result;
+		int summ, count;
+		
 	    count 	= 0;
 		summ 	= 0;
 		
 		for(YouTubeMediaContent mediaContent : mediaGroup.getYouTubeContents()) {		      
 		      summ += mediaContent.getDuration();
 		      count++;	  
-		    }			
+		    }	
 		
-		System.out.println("summ: " + summ + " count: " + count);
-		System.out.println("time: " + Utils.SecondsToString(summ/count));
+		try{
+			result = summ/count;
+			//System.out.println("summ: " + summ + " count: " + count);
+			//System.out.println("time: " + Utils.SecondsToString(result));
+	    }
+	    catch(ArithmeticException e){
+	    	System.out.println("ArithmeticException in duration count method!");
+	    	
+	    	result = 0;
+		}
 		
-		return (Utils.SecondsToString(summ/count));
+		return (Utils.SecondsToString(result));
 	}
 
 

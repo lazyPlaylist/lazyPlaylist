@@ -8,19 +8,21 @@ import json.TitleRequest;
 
 public class RequestLoader {
 	private ArrayList<TitleRequest> inTitleJSON;
-	
+	private String EMPTY_STRING = "";
 	
 	RequestLoader(){	
 		inTitleJSON = new ArrayList<TitleRequest>();
 	}
 	
 	public void Add(TitleRequest tr){
-		inTitleJSON.add(tr);
+		if (CheckTitle(tr.getTitle()))
+			inTitleJSON.add(tr);
 	}
 	
 	public void Add(ArtistRequest ar){
 		TitleRequest tr = new TitleRequest(ar.getArtist() + " - " + ar.getTitle(), ar.getOffset());
-		inTitleJSON.add(tr);
+		if (CheckTitle(tr.getTitle()))
+			inTitleJSON.add(tr);
 	}
 	
 	public ArrayList<TitleRequest> GetList(){
@@ -50,6 +52,16 @@ public class RequestLoader {
 		for(int i = 0; i < trList.length; i++ ){
 			Add(trList[i]);
 		}
+	}
+	
+	private boolean CheckTitle(String title){
+		boolean result = true;
+		if (Utils.isWhitespace(title)){
+			result = false;
+			//System.out.println(title + "is a whitespace");
+		}
+		
+		return result;
 	}
 
 }

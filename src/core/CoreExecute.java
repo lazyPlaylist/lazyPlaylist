@@ -10,6 +10,7 @@ import json.MultipleSongRespond;
 
 
 public class CoreExecute {
+	//TODO It's possible to inherit everything from one class like AbstractRequest, but problems with JSON could occure
 	public static MultipleSongRespond Execute(MultipleArtistRequest tr){
 		RequestLoader loader = new RequestLoader();
 		

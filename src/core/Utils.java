@@ -25,4 +25,36 @@ public class Utils {
 		
 	    return new String(result);
 	  }
+	
+	  /**
+	   * <p>Checks if the String contains only whitespace.</p>
+	   *
+	   * <p><code>null</code> will return <code>false</code>.
+	   * An empty String ("") will return <code>true</code>.</p>
+	   *
+	   * <pre>
+	   * StringUtils.isWhitespace(null)   = false
+	   * StringUtils.isWhitespace("")     = true
+	   * StringUtils.isWhitespace("  ")   = true
+	   * StringUtils.isWhitespace("abc")  = false
+	   * StringUtils.isWhitespace("ab2c") = false
+	   * StringUtils.isWhitespace("ab-c") = false
+	   * </pre>
+	   *
+	   * @param str  the String to check, may be null
+	   * @return <code>true</code> if only contains whitespace, and is non-null
+	   * @since 2.0
+	   */
+	  public static boolean isWhitespace(String str) {
+	      if (str == null) {
+	          return false;
+	      }
+	      int sz = str.length();
+	      for (int i = 0; i < sz; i++) {
+	          if ((Character.isWhitespace(str.charAt(i)) == false)) {
+	              return false;
+	          }
+	      }
+	      return true;
+	  }
 }
