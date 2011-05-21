@@ -65,10 +65,8 @@ function nextTrack()
 
 function getPlayList(){
 
-    if($('#ololo').val() == ''){
-        alert('Hey! Type something!')
+    if($('#ololo').val() == '')
         return;
-    }
 
     //raw string from texarea
     var track_list_raw = $('#ololo').val().split('\n')
@@ -131,7 +129,6 @@ function getPlayList(){
     $.ajax( {
         type : 'POST',
         url : '/mmp_gae',
-//        url : 'http://10.7.14.2:8888/mmp_gae',
         data : {'type':req_type,
                 'json':JSON_req_obj},
         dataType : 'json',
