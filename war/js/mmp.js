@@ -156,7 +156,7 @@ $(function(){
     })
 
     $('#ololo').blur(function(){
-        $(this).animate({'height':'3em'},{duration:300},getPlayList())
+        $(this).animate({'height':'3em'},{duration:300})
     })
 
     //main button click
