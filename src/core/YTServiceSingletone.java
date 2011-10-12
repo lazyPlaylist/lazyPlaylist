@@ -92,11 +92,17 @@ public class YTServiceSingletone {
 	    count 	= 0;
 		summ 	= 0;
 		
-		for(YouTubeMediaContent mediaContent : mediaGroup.getYouTubeContents()) {		      
+		for(YouTubeMediaContent mediaContent : mediaGroup.getYouTubeContents()) {
 		      summ += mediaContent.getDuration();
-		      count++;	  
-		    }	
-		
+		      count++;
+		    }
+
+        //Don't know why but try/catch works strange on GAE...
+		if (summ == 0 || count == 0)
+		{
+		    return (Utils.SecondsToString(0));
+		}
+
 		try{
 			result = summ/count;
 			//System.out.println("summ: " + summ + " count: " + count);
