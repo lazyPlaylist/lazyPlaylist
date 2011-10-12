@@ -100,31 +100,9 @@ li .iframe
     color:red;
 }
 
-#loader
-{
-    padding-top:5px;
-    display:block;
-    position:relative;
-}
-
-#l_spiral
-{
-    position:absolute;
-    left:245px;
-    top:205px;
-    
-}
-
-#r_spiral
-{
-    position:absolute;
-    left:430px;
-    top:205px;
-}
-
 #loader_spin
 {
     position:absolute;
     left:370px;
-    top:400px;
+    top:20px;
 }

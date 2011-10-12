@@ -5,7 +5,7 @@
     <title>lazyPlaylist</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
-    <script type="text/javascript" src="http://github.com/douglascrockford/JSON-js/raw/master/json2.js"></script>
+    <script type="text/javascript" src="http://yandex.st/json2/2011-01-18/json2.min.js"></script>
     <script type="text/javascript" src="js/mmp.js"></script>
     <script type="text/javascript" src="js/jquery.watermark.min.js"></script>
     <script type="text/javascript" src="js/jquery.textshadow.js"></script>
@@ -15,7 +15,8 @@
     <style type="text/css">@import "style.css";</style>
 </head>
 <body>
-    <img id="logo" src="img/logo.png" alt="lazyPlaylist">
+    <a href="\"><img id="logo" src="img/logo.png" alt="lazyPlaylist"></a>
+
     <br/>
     
     <div id="page">
@@ -31,15 +32,15 @@
 
     <div id="YTplayer-template" class="YTplayer">
         You need Flash player 8+ and JavaScript enabled to view this video.
-        <a href="http://get.adobe.com/ru/flashplayer">Get Flash player</a>
+        <a href="http://get.adobe.com/flashplayer">Get Flash player</a>
     </div>
 
     <div id="loader" style="display:none">
-        <img src="img/hdhead.gif" alt="HackDay Yo!"/>
-        <img id="l_spiral" src="img/th_spiral.gif" alt="HackDay Yo!"/>
-        <img id="r_spiral" src="img/th_spiral.gif" alt="HackDay Yo!"/>
         <img id="loader_spin" src="img/loader.gif" alt="HackDay Yo!"/>
     </div>
 </div>
+<!-- Yandex.Metrika counter -->
+    <div style="display:none;"><script type="text/javascript">(function(w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter10307563 = new Ya.Metrika({id:10307563, enableAll: true, trackHash:true}); } catch(e) { } }); })(window, "yandex_metrika_callbacks");</script></div><script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script><noscript><div><img src="//mc.yandex.ru/watch/10307563" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </body>
 </html>

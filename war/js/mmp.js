@@ -116,6 +116,8 @@ function getPlayList(){
 
         //disabled btn
         $('#theB').removeAttr('disabled')
+
+        window.location.hash = "done";
     }
 
     //disabled btn
@@ -151,26 +153,23 @@ function insertTrackLi(title,duration,video_id){
 $(function(){
     $('#ololo').watermark('Artist\n\nTrack title\nTrack title\n' +
                          '\nOR\n\nArtist - Track title\nArtist - Track title')
-    $('#ololo').focus(function(){
-        $(this).animate({'height':'12em'},{duration:300})
-    })
-
-    $('#ololo').blur(function(){
-        $(this).animate({'height':'3em'},{duration:300})
-    })
 
     //main button click
     $('#theB').click(function(){
+        $('#ololo').blur(function(){
+            $(this).animate({'height':'3em'},{duration:300})
+        })
         getPlayList()
     });
 
     //remove track from playlist
     $('a.rem-track').live('click',function(){
-        $(this).animate({'height':'3em'},{duration:300},nextTrack)
+        $(this).parent().remove();
+        return false;
     })
 
     //
-    $('li:not(.active)').live('click',function(){
+    $('li:not(.active)').live('click',function(t){
         play($(this))
     })
 })
